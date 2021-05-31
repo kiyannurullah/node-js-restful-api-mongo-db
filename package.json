@@ -1,0 +1,27 @@
+{
+  "name": "js-restful-api-mongo-db",
+  "version": "1.0.0",
+  "description": "NodeJs Restful Api MongoDB Example Project",
+  "main": "script.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "kiyannurullah",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiyannurullah/node-js-restful-api-mongo-db.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kiyannurullah/node-js-restful-api-mongo-db/issues"
+  },
+  "homepage": "https://github.com/kiyannurullah/node-js-restful-api-mongo-db#readme"
+}

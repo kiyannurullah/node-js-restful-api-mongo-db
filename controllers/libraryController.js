@@ -1,7 +1,7 @@
 const Post = require('../models/Post')
 
 const index = (req, res) => {
-    res.send('<div style="color:#ffffff;background-color: #2f2f2f; margin: auto;width: 375px;box-shadow: 0px 6px 12px #2f2f2f;padding: 24px;border-radius: 8px;font-family: system-ui;"><h1 style="text-align: center">Welcome To <br/> &#128214; <br/> Library App Restful APIs</h1> ' +
+    res.send('<div style="color:#ffffff;background: #2f2f2f; margin: auto;width: 375px;box-shadow: 0px 6px 12px #2f2f2f;padding: 24px;border-radius: 8px;font-family: system-ui;"><h1 style="text-align: center">Welcome To <br/> &#128214; <br/> Library App Restful APIs</h1> ' +
         '<h2>Used Technologies</h2>' +
         '<ul>' +
         '<li>NodeJS</li>' +

@@ -1,6 +1,6 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 require('dotenv/config');
 
@@ -8,27 +8,29 @@ const app = express();
 
 app.use(bodyParser.json());
 
-//import routes
+// Import routes
 
-const postRoute = require('./routes/posts')
+const postRoute = require('./routes/posts');
 
 app.use('/posts', postRoute)
 
-//Routes
+// Connect to DB
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
+mongoose
+    .connect(process.env.DB_CONNECT, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,   })
+    .then(() => console.log("Database connected"))
+    .catch(err => console.log(err));
+
+// Routes
+
+app.get('/' , (req,res) => {
+    res.send('Welcome Home Page');
 });
 
-//Connect to DB
 
-mongoose.connect(
-    process.env.DB_CONNECT,
-    { useNewUrlParser: true,
-    useUnifiedTopology: true},
-    () => console.log("coonect db")
-)
+// Listening
 
-//app listening
-
-app.listen(3000)
+app.listen(3000);

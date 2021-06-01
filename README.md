@@ -1,7 +1,8 @@
 # node-js-restful-api-mongo-db
 NodeJs Restful Api MongoDB Example Project
 
-Insert, update, delete and search by id processes
+Jwt Login and register
+Insert, update, delete, list and search by id rest api
 
-example .enw file
-DB_CONNECT = mongodb+srv://<username>:<password>@mongoDbUrl
+-Example .enw file enwExample.txt
+-Postman collection in postman folder

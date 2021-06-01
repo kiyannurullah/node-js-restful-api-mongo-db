@@ -6,6 +6,8 @@ require('dotenv/config');
 
 const app = express();
 
+const port = process.env.PORT || 3000
+
 app.use(bodyParser.json());
 
 // Import routes
@@ -33,4 +35,4 @@ app.get('/' , (req,res) => {
 
 // Listening
 
-app.listen(3000);
+app.listen(port);

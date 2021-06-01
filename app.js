@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
+
 
 require('dotenv/config');
 
@@ -13,8 +15,10 @@ app.use(bodyParser.json());
 // Import routes
 
 const postRoute = require('./routes/posts');
+const authRoute = require('./routes/auth')
 
-app.use('/posts', postRoute)
+app.use('/', postRoute)
+app.use('/', authRoute)
 
 // Connect to DB
 
@@ -22,6 +26,7 @@ mongoose
     .connect(process.env.DB_CONNECT, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
+        useFindAndModify: false,
         useCreateIndex: true,   })
     .then(() => console.log("Database connected"))
     .catch(err => console.log(err));

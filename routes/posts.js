@@ -5,7 +5,7 @@ const authenticate = require('../middleware/authenticate')
 
 const router = express.Router();
 
-router.get('/', authenticate, libraryController.index)
+router.get('/', libraryController.index)
 router.get('/get-books', authenticate, libraryController.getList)
 router.post('/create-new-book', authenticate, libraryController.createData)
 router.patch('/update-book/:postId', authenticate, libraryController.updateData)

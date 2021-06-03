@@ -54,7 +54,7 @@ const createData = (req, res) => {
             res.json(data);
         })
         .catch(err => {
-            res.json({message: err})
+            res.status(400).json({message: err})
         });
 }
 
@@ -62,11 +62,17 @@ const updateData = async (req, res) => {
     try {
         const updatePost = await Post.updateOne(
             {bookId: req.params.postId},
-            {$set: {title: req.body.title}}
+            {$set: {
+                    title: req.body.title,
+                    description: req.body.description,
+                    author: req.body.author
+            }}
         )
         res.json(updatePost)
     } catch (err) {
-        res.json({message: err})
+        res.status(400).json({
+            message: (err.name === 'MongoError' && err.code === 11000) ? 'Title already exists !' : errorHandler.getErrorMessage(err)
+        })
     }
 }
 
@@ -75,7 +81,7 @@ const deleteData = async (req, res) => {
         const removePost = await Post.remove({bookId: req.params.postId});
         res.json(removePost)
     } catch (err) {
-        res.json({message: err})
+        res.status(400).json({message: err})
     }
 }
 
@@ -84,7 +90,7 @@ const search = async (req, res) => {
         const post = await Post.findById(req.params.postId);
         res.json(post);
     } catch (err) {
-        res.json({meesage: err});
+        res.status(400).json({meesage: err});
     }
 }
 

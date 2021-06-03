@@ -53,7 +53,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"updated data2\",\r\n    \"description\": \"description\",\r\n    \"author\": \"Nurullah\"\r\n}",
+					"raw": "{\r\n    \"title\": \"Concepts, Techniques, and Models of Computer Programming\",\r\n    \"description\": \"Running the Example Programs - Introduction to Programming Concepts - General computation models : Declarative Computation Model - Declarative Programming Techniques - Declarative Concurrency - Message-Passing Concurrency\",\r\n    \"author\": \"Peter Van-Roy, ‎Seif Haridi\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -92,7 +92,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"updated data\",\r\n    \"description\": \"description\"\r\n}",
+					"raw": "{\r\n    \"title\": \"updated dataa\",\r\n    \"description\": \"descriptiona\",\r\n    \"author\": \"Nurullaha\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -100,7 +100,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/update-book/60b5e14fe2011641848a1aca",
+					"raw": "http://localhost:3000/update-book/11",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -108,7 +108,7 @@
 					"port": "3000",
 					"path": [
 						"update-book",
-						"60b5e14fe2011641848a1aca"
+						"11"
 					]
 				}
 			},
@@ -200,7 +200,7 @@
 					"script": {
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);\r",
-							"pm.environment.set(\"node_token\", \"Bearer \" + jsonData.token);"
+							"pm.environment.set(\"node_token\", \"Bearer \" + jsonData.data.token);"
 						],
 						"type": "text/javascript"
 					}
@@ -251,7 +251,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\" : \"nuri\",\r\n    \"email\": \"nurullahkiyan@gmail.com\",\r\n    \"password\": \"zlatan123\"\r\n}",
+					"raw": "{\r\n    \"name\" : \"nurii\",\r\n    \"email\": \"nurullahkiyann@gmail.com\",\r\n    \"password\": \"zlatan123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

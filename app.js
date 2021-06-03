@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
-
+const cors = require('cors')
 
 require('dotenv/config');
 
@@ -11,11 +11,13 @@ const app = express();
 const port = process.env.PORT || 3000
 
 app.use(bodyParser.json());
+app.use(cors())
 
 // Import routes
 
 const postRoute = require('./routes/posts');
 const authRoute = require('./routes/auth')
+
 
 app.use('/', postRoute)
 app.use('/', authRoute)

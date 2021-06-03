@@ -38,24 +38,34 @@ const login = (req, res, next) => {
             if (user) {
                 bcrypt.compare(password, user.password, function (err, result) {
                     if (err) {
-                        res.json({
-                            error: err
+                        res.status(400).json({
+                            status: 400,
+                            error: true,
+                            message: 'Password does not exist.',
                         })
                     }
                     if (result) {
                         let token = jwt.sign({email: user.email}, process.env.TOKEN_IDENTITY, {expiresIn: '1h'})
-                        res.json({
-                            message: 'Login Successful',
-                            token
+                        res.status(200).json({
+                            status:200,
+                            error:false,
+                            message:'Login Successful',
+                            data:{
+                                token:token
+                            }
                         })
                     } else {
-                        res.json({
-                            message: 'Password does not exist.'
+                        res.status(400).json({
+                            status: 400,
+                            error: true,
+                            message: 'Password does not exist.',
                         })
                     }
                 })
             } else {
-                res.json({
+                res.status(400).json({
+                    status: 400,
+                    error: true,
                     message: 'No user found.'
                 })
             }

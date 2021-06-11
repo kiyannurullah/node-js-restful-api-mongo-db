@@ -115,41 +115,6 @@
 			"response": []
 		},
 		{
-			"name": "Delete Book",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "{{node_token}}",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:3000/delete-book/3",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"delete-book",
-						"3"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Search Books",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true

@@ -67,21 +67,23 @@ const updateData = async (req, res) => {
                     description: req.body.description,
                     author: req.body.author
             }}
-        )
+        ).then((result) => {
+            res.json({
+                status: 200,
+                message: "Success",
+                data: {
+                    title: req.body.title,
+                    description: req.body.description,
+                    author: req.body.author,
+                    bookId: Number(req.params.postId)
+                }
+            });
+        })
         res.json(updatePost)
     } catch (err) {
         res.status(400).json({
             message: (err.name === 'MongoError' && err.code === 11000) ? 'Title already exists !' : errorHandler.getErrorMessage(err)
         })
-    }
-}
-
-const deleteData = async (req, res) => {
-    try {
-        const removePost = await Post.remove({bookId: req.params.postId});
-        res.json(removePost)
-    } catch (err) {
-        res.status(400).json({message: err})
     }
 }
 

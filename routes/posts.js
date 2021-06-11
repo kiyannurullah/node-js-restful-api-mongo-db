@@ -9,7 +9,6 @@ router.get('/', libraryController.index)
 router.get('/get-books', authenticate, libraryController.getList)
 router.post('/create-new-book', authenticate, libraryController.createData)
 router.patch('/update-book/:postId', authenticate, libraryController.updateData)
-router.delete('/delete-book/:postId', authenticate, libraryController.deleteData)
 router.get('/search/:postId', authenticate, libraryController.search)
 
 module.exports = router;
